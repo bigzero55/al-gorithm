@@ -10,7 +10,7 @@ function ReverseWithoutNumber (str) {
    return joinArray + cutNumber;
 }
 
-console.log(ReverseWithoutNumber(_string))
+console.log(ReverseWithoutNumber(_string));
 
 // #2 =====================================================
 
@@ -25,7 +25,7 @@ function getLongest (str) {
 return `${Math.max(...arrayNumber)} character`
 }
 
-console.log(getLongest(sentence))
+console.log(getLongest(sentence));
 
 // #3 =====================================================
 
@@ -53,6 +53,40 @@ function conclusion(query) {
    return `OUTPUT [${_array}] = ${conclus.join(' ')}`
 }
 
-console.log(conclusion(QUERY))
+console.log(conclusion(QUERY));
 
 // #4 =====================================================
+
+const Matrix = [[1, 2, 0], [4, 5, 6], [7, 8, 9]]
+
+function getDiagonal1 (matrix) {
+   let diagonalArray = []
+   let index = 0
+   matrix.forEach(el => {
+      diagonalArray.push(el[index])
+      index++
+   })
+   return diagonalArray
+}
+
+function getDiagonal2 (matrix) {
+   let diagonalArray = []
+   let index = matrix.length -1
+   matrix.map(el => {
+      diagonalArray.push(el[index]);
+      index--
+   });
+   return diagonalArray
+}
+
+function sumDiagonal(_array) {
+   return _array.reduce((a,b) => {return a + b});
+};
+
+const ResultDiagonal1Sum = sumDiagonal(getDiagonal1(Matrix))
+const ResultDiagonal2Sum = sumDiagonal(getDiagonal2(Matrix));
+const ResultMatrixSub = ResultDiagonal1Sum - ResultDiagonal2Sum
+
+console.log(`hasilnya adalah ${ResultMatrixSub}`)
+
+// Terimakasih
